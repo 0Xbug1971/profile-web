@@ -19,6 +19,9 @@ var App = Composer.Model.extend({
 		return turtl.core.send('app:api:get-config');
 	},
 
+	get_logs: function(lines) {
+	return turtl.core.send('app:get-log', parseInt(lines) || 256);
+	},
 
 
 	shutdown: function() {
