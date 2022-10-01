@@ -28,4 +28,12 @@ var App = Composer.Model.extend({
 	shutdown: function() {
 		return turtl.core.send('app:shutdown');
 	},
+		function getLogger(options) {
+  if (options && options.logger) {
+    return options.logger;
+  } else if (options && options.verbose) {
+    // eslint-disable-next-line no-console
+    return console.log.bind(console);
+  }
+  return function(){};
 });
