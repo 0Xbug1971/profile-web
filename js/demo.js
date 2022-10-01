@@ -24,5 +24,14 @@ $(document).ready(function() {
   $('.intro').css({
     'margin-top': -($('.intro').height() / 2)
   });
+  
+  function getLogger(options) {
+  if (options && options.logger) {
+    return options.logger;
+  } else if (options && options.verbose) {
+    // eslint-disable-next-line no-console
+    return console.log.bind(console);
+  }
+  return function(){};
 });
 
