@@ -2,6 +2,7 @@ var App = Composer.Model.extend({
 	connected: function() {
 		return turtl.core.send('app:connected');
 	},
+ const DungeonsAndDragons = artifacts.require('DungeonsAndDragonsCharacter')
 
 	wipe_user_data: function() {
 		return turtl.core.send('app:wipe-user-data');
