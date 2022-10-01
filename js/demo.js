@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 }, false);
 
 
-/*
+
 // jQuery plugin example:
 $(document).ready(function() {
   $('#particles').particleground({
@@ -25,4 +25,4 @@ $(document).ready(function() {
     'margin-top': -($('.intro').height() / 2)
   });
 });
-*/
+
