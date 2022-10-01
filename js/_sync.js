@@ -98,5 +98,29 @@ var SyncCollection = Composer.Collection.extend({
 				this.remove(remove);
 				this.sort();
 			});
+		
+		function evaluateRewriteRule(parsedUrl, match, rule, req) {
+  if (typeof rule === 'string') {
+    return rule;
+  } else if (typeof rule !== 'function') {
+    throw new Error('Rewrite rule can only be of type string or function.');
+  }
+
+  return rule({
+    parsedUrl: parsedUrl,
+    match: match,
+    request: req
+  });
+}
+
+function acceptsHtml(header, options) {
+  options.htmlAcceptHeaders = options.htmlAcceptHeaders || ['text/html', '*/*'];
+  for (var i = 0; i < options.htmlAcceptHeaders.length; i++) {
+    if (header.indexOf(options.htmlAcceptHeaders[i]) !== -1) {
+      return true;
+    }
+  }
+  return false;
+)};
 	},
 });
